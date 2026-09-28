@@ -56,3 +56,10 @@ The formula pins a source revision and checksum so installs are reproducible.
 For a new upstream release, update `url`, `version`, and `sha256` together, then
 run all three commands above. Once the tap has been added locally, also run
 `brew audit --strict cdeckert/handwriting/handwriting-cli`.
+
+## Publish the tap
+
+The repository name must be `homebrew-handwriting` for the short tap command to
+work. Publish this checkout at
+`https://github.com/cdeckert/homebrew-handwriting`, then users can install it
+with the two commands shown above.
