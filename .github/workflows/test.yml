@@ -1,0 +1,24 @@
+name: Test formula
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Homebrew
+        run: brew update-reset
+      - name: Check formula style
+        run: brew style Formula/handwriting-cli.rb
+      - name: Install formula
+        run: brew install --build-from-source Formula/handwriting-cli.rb
+      - name: Test installed CLI
+        run: brew test handwriting-cli
