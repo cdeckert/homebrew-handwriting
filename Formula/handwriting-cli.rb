@@ -4,9 +4,8 @@
 class HandwritingCli < Formula
   desc "Create handwritten PDF, PNG, and SVG files locally on Apple silicon"
   homepage "https://github.com/cdeckert/handwriting-synthesis"
-  url "https://github.com/cdeckert/handwriting-synthesis/archive/a90a2e28c0a29bcd7c74e5c463280b552f136133.tar.gz"
-  version "0.1.0"
-  sha256 "cef6fcb99821df445a53c673c3a12005f31549141ffa2ef6971a1024883de38c"
+  url "https://github.com/cdeckert/handwriting-synthesis/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "9f137a8b5fbd388499f2df9f3aeccbbc06b88b521cc5f0b4ddb631653020a446"
   head "https://github.com/cdeckert/handwriting-synthesis.git", branch: "main"
 
   depends_on xcode: ["16.0", :build]
