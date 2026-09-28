@@ -16,9 +16,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Configure Homebrew
         run: brew update-reset
+      - name: Add checkout as a tap
+        run: brew tap cdeckert/handwriting "$GITHUB_WORKSPACE"
       - name: Check formula style
-        run: brew style Formula/handwriting-cli.rb
+        run: brew style cdeckert/handwriting/handwriting-cli
+      - name: Audit formula
+        run: brew audit --strict cdeckert/handwriting/handwriting-cli
       - name: Install formula
-        run: brew install --build-from-source Formula/handwriting-cli.rb
+        run: brew install --build-from-source cdeckert/handwriting/handwriting-cli
       - name: Test installed CLI
         run: brew test handwriting-cli

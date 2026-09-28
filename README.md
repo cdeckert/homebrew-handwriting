@@ -47,15 +47,16 @@ brew upgrade handwriting-cli
 Install and test the formula directly from a checkout:
 
 ```bash
-brew install --build-from-source ./Formula/handwriting-cli.rb
+brew tap cdeckert/handwriting "$PWD"
+brew install --build-from-source cdeckert/handwriting/handwriting-cli
 brew test handwriting-cli
-brew style ./Formula/handwriting-cli.rb
+brew style cdeckert/handwriting/handwriting-cli
+brew audit --strict cdeckert/handwriting/handwriting-cli
 ```
 
-The formula pins a source revision and checksum so installs are reproducible.
-For a new upstream release, update `url`, `version`, and `sha256` together, then
-run all three commands above. Once the tap has been added locally, also run
-`brew audit --strict cdeckert/handwriting/handwriting-cli`.
+The formula pins a source release and checksum so installs are reproducible.
+For a new upstream release, update `url` and `sha256` together, then run all
+four commands above.
 
 ## Publish the tap
 
